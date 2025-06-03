@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, ActivityIndicator, ScrollView } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity,Image, ActivityIndicator, ScrollView } from 'react-native';
 import * as Location from 'expo-location';
 import { LinearGradient } from 'expo-linear-gradient';
 import { MaterialIcons } from '@expo/vector-icons';
+import icon from '../assets/icon.png';
 
 export default function WeatherScreen() {
   const [weather, setWeather] = useState(null);
@@ -120,7 +121,8 @@ export default function WeatherScreen() {
       <ScrollView contentContainerStyle={styles.scrollContainer}>
         {!weather && !loading && (
           <View style={styles.welcomeContainer}>
-            <Text style={styles.title}>🌤️ WeatherSense</Text>
+            <Image source={icon} style={styles.icon} />
+            <Text style={styles.title}> WeatherSense</Text>
             <Text style={styles.subtitle}>Your premium weather companion</Text>
             <Text style={styles.description}>
               Get accurate forecasts and real-time weather updates for your location
@@ -586,5 +588,10 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.3,
     shadowRadius: 6,
     elevation: 8,
+  },
+  icon: {
+    width: 100,
+    borderRadius: 15,
+    height: 100,
   },
 });

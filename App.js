@@ -1,7 +1,7 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import WeatherScreen from './components/WeatherScreen';
-import SearchScreen from './components/SearchScreen';
+import DailyPlannerScreen from './components/DailyPlanner';
 import { MaterialIcons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
 import { SafeAreaProvider, SafeAreaView, useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -46,7 +46,7 @@ function AppWrapper() {
             />
             <Tab.Screen
               name="Daily Planner"
-              component={SearchScreen}
+              component={DailyPlannerScreen}
               options={{
                   tabBarIcon: ({ color, size }) => (
                     <MaterialIcons name="event-note" size={28} color={color} />
